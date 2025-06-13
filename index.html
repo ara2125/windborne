@@ -37,19 +37,26 @@
 </head>
 <body>
 
-  <h1>🎈 Windborne Balloon & Hurricane Landfall Analysis</h1>
+  <h1>🎈 Windborne Balloon Position & Hurricane Landfall Analysis</h1>
 
   <p>
-    This project analyzes the proximity between <strong>Windborne Systems balloon deployments</strong> and 
-    <strong>recent Atlantic hurricane landfalls</strong> using data from NOAA’s HURDAT2 archive.
-    The goal is to evaluate how balloon positioning correlates with hurricane intensity.
+    Climate change has gradually increased the frequency and intensity of natural disasters, such as hurricanes
+    tropical storms. Thus, <strong>Windborne's weather balloons</strong> are crucial to predicting the conditions leading to the development
+    and landfall of these hurricanes. 
+  </p>
+
+  <p>
+    <strong>NOAA's HURDAT2</strong> is a dataset that includes decades of hurricane and tropical storm landfall information.
+    This ML project uses recent hurricane data and weather balloon position information to identify key relationships between
+    the balloons' positions and the hurricane's conditions. The goal is to identify where <strong>weather balloons should be concentrated</strong>
+    and whether there is a <strong>correlation between balloon position and hurricane wind speeds</strong>.
   </p>
 
   <h2>🧪 Methodology</h2>
   <ul>
-    <li>Fetched live balloon coordinates from Windborne’s API</li>
-    <li>Parsed recent hurricane tracks (2020–2023) from NOAA’s HURDAT2 dataset</li>
-    <li>Matched balloon positions to hurricane positions based on proximity (1–7 degrees)</li>
+    <li>Fetched each balloon's latitude, longitude, and altitude positions through Windborne's live constellation API.</li>
+    <li>Filtered through NOAA's HURDAT2 dataset to include hurricanes from 2020 to 2023 for maximum relevancy.</li>
+    <li>Matched balloon positions to hurricane positions based on proximity (1–7 degrees) to identify priority areas for weather balloon placement.</li>
     <li>Trained a Random Forest model to predict hurricane wind speed from balloon proximity and altitude</li>
   </ul>
 
