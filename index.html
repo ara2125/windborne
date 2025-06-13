@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Windborne Balloon & Hurricane Analysis</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background-color: #fefefe;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    h2 {
+      color: #2980b9;
+      margin-top: 2.5rem;
+    }
+    img {
+      max-width: 100%;
+      border: 1px solid #ddd;
+      margin: 1rem 0;
+    }
+    a {
+      color: #3498db;
+    }
+    .footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎈 Windborne Balloon & Hurricane Landfall Analysis</h1>
+
+  <p>
+    This project analyzes the proximity between <strong>Windborne Systems balloon deployments</strong> and 
+    <strong>recent Atlantic hurricane landfalls</strong> using data from NOAA’s HURDAT2 archive.
+    The goal is to evaluate how balloon positioning correlates with hurricane intensity.
+  </p>
+
+  <h2>🧪 Methodology</h2>
+  <ul>
+    <li>Fetched live balloon coordinates from Windborne’s API</li>
+    <li>Parsed recent hurricane tracks (2020–2023) from NOAA’s HURDAT2 dataset</li>
+    <li>Matched balloon positions to hurricane positions based on proximity (1–7 degrees)</li>
+    <li>Trained a Random Forest model to predict hurricane wind speed from balloon proximity and altitude</li>
+  </ul>
+
+  <h2>📊 Results</h2>
+  <p>The analysis was repeated at various proximity thresholds. Below are the key findings:</p>
+
+  <h3>Results at 3° Proximity</h3>
+  <img src="results_3deg.png" alt="Results at 3 degrees" />
+
+  <h3>Results at 5° Proximity</h3>
+  <img src="results_5deg.png" alt="Results at 5 degrees" />
+
+  <h3>Results at 7° Proximity</h3>
+  <img src="results_7deg.png" alt="Results at 7 degrees" />
+
+  <p>Across all thresholds, feature importance analysis revealed that <strong>altitude</strong> and <strong>distance</strong> both contribute meaningfully to the prediction of hurricane intensity.</p>
+
+  <h2>📁 Project Links</h2>
+  <ul>
+    <li><a href="notebook.ipynb" target="_blank">View the full Jupyter Notebook</a></li>
+    <li><a href="https://github.com/YOUR_USERNAME/YOUR_REPO" target="_blank">View the project on GitHub</a></li>
+  </ul>
+
+  <div class="footer">
+    Built with ❤️ using open atmospheric data.<br>
+    &copy; 2025 Windborne Analysis Project
+  </div>
+
+</body>
+</html>
